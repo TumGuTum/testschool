@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "./reset.css";
+
+/*Шапка*/
+
+/*Анимация*/
+body{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    width: 100%;
+    
+}
+  
+  .black-block {
+
+    width: 100%;
+    height: 100%; /* Занимает всю высоту экрана */
+    position: relative;
+    user-select: all;
+    pointer-events: auto;
+
+  }
+  
+  .hover-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .digit {
+    position: absolute;
+    font-size: 10px;
+    color: white;
+    pointer-events: none;
+  }
+  
+  @keyframes fall {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+
+
+
+/*Контент*/
+  .header{
+    padding: 31px 0 100px;
+    color: #fff;
+    height: 700px;
+    background-color: black;
+  }
+  .container{
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 32px;
+    position: relative;
+    
+  }
+  .container--header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header a{
+    color: #fff;
+  }
+
+
+
+  /*Навигация*/
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    column-gap: 54px;
+    font-size: 15px;
+    font-weight: 300;
+    align-items: center;
+}
+.nav-list__link{
+    opacity: 0.7;
+}
+.nav-list__link--active{
+    opacity: 1;
+}
+.logo{
+    flex-shrink: 0;
+}
+.user{
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+.user__content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+.user__greeting{
+    opacity: 0.5;
+}
+
+/*Заголовок и кнопка*/
+.header-content{
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  align-items: center;
+}
+.header-title{
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.3;
+  
+}
+
+
+.glowbutton {
+  --glow-color: rgb(176, 252, 255);
+  --glow-spread-color: rgba(123, 251, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 255, 255);
+  --btn-color: rgb(61, 127, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.glowbutton::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.glowbutton:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.glowbutton:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*Паралакс*/
+.circle{
+  background:  rgb(176, 252, 255);
+  border-radius: 50%;
+  filter: blur(2em);
+  
+}
+#scene1{
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+#scene1 .circle{
+  width: 50px;
+  height: 50px;
+
+
+}
+#main{
+  overflow: hidden;
+}
+
+#scene2{
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+#scene2 .circle{
+  width: 100px;
+  height: 100px;
+
+}
+#scene3{
+  position: absolute;
+  left: 1000px;
+  top: 300px;
+}
+#scene3 .circle{
+  width: 100px;
+  height: 100px;
+
+}
